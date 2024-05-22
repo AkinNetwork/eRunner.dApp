@@ -2,8 +2,8 @@
 
 ## FOLDER STRUCTURE
 >
-> #`eRunner.dApp` _Root directory_ <br>
-> -- `UIdev  _root` UI directory_ <br>
-> --- `UIdev.react`  _React JS development environment directory_ <br>
+> `eRunner.dApp` _Root directory_ \n
+> -- `UIdev  _root` UI directory_ \n
+> --- `UIdev.react`  _React JS development environment directory_ \n
 > --- `UIdev.sass`  _SASS compiler environment directory_
 >
