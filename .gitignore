@@ -7,4 +7,4 @@ UIDev/UIDev.sass/.DS_Store
 
 # Set ignore for all vscode
 
-.vscode 
+.vscode/* 
