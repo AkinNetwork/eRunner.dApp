@@ -2,9 +2,17 @@
 
 .DS_Store
 UIDev/.DS_Store
-UIDev/UIDev.react/.DS_Store
+UIDej/UIDev.react/.DS_Store
 UIDev/UIDev.sass/.DS_Store
 
-# Set ignore for all vscode
+# Editor directories and files
 
-.vscode/* 
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
