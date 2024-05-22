@@ -13,7 +13,7 @@
 ### 1. React JS with Vite
 
 Create the React project base with Vite. <br>
-Documentation URL: [https://vitejs.dev/guide/]
+Documentation URL: [https://vitejs.dev/guide/] (<https://vitejs.dev/guide/>)
 
 #### Installation
 
@@ -33,4 +33,4 @@ Two official plugins are installed:
  `sass --version` <br>
  1.77.2 compiled with dart2js 3.4.0
 
- Documentation URL: [https://sass-lang.com/guide/]
+ Documentation URL: [https://sass-lang.com/guide/] (<https://sass-lang.com/guide/>)
