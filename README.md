@@ -1,8 +1,9 @@
-eRunner UI 
+# eRunner UI 
 
-FOLDER STRUCTURE
-
-eRunner.dApp //root directory
--- UIdev // root UI directory
---- UIdev.react // React JS development environment directory
---- UIdev.sass // SASS compiler environment directory
+###### FOLDER STRUCTURE
+>
+> `eRunner.dApp` _Root directory_ <br>
+> -- `UIdev  _root` UI directory_ <br>
+> --- `UIdev.react`  _React JS development environment directory_ <br>
+> --- `UIdev.sass`  _SASS compiler environment directory_
+>
