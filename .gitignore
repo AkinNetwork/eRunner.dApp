@@ -4,3 +4,7 @@
 UIDev/.DS_Store
 UIDev/UIDev.react/.DS_Store
 UIDev/UIDev.sass/.DS_Store
+
+# Set ignore for all vscode
+
+.vscode 
