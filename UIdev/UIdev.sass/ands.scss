@@ -1,0 +1,27 @@
+/*! ands-css | AnOS License */
+@use "sass:math";
+
+/* 1. VARIABLES 
+ 
+We import the contributor's variables before the AnDS variables. 
+Some of these variables may be overwritten by the AnDS declarations.
+
+*/
+
+// @import url(contributors/normalize/_variables.scss);
+@import "contributors/normalize/_variables.scss";
+/* 2. NORMALIZE
+
+This is applied before any custom styling to ensure consistent base styling across all supported browsers:
+
+- Chrome
+- Edge
+- Firefox ESR+
+- Internet Explorer 10+
+- Safari 8+
+- Opera
+
+*/
+
+// @import url(contributors/normalize/_normalize.scss);
+@import "contributors/normalize/_normalize.scss";

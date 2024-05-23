@@ -1,12 +1,11 @@
 # eRunner UI
 
 ## FOLDER STRUCTURE
->
+
 > `eRunner.dApp` _Root directory_ <br>
-> -- `UIdev  _root` UI directory_ <br>
-> --- `UIdev.react`  _React JS development environment directory_ <br>
-> --- `UIdev.sass`  _SASS compiler environment directory_
->
+> -- `UIdev  _root` UI directory* <br>
+> --- `UIdev.react` \_React JS development environment directory* <br>
+> --- `UIdev.sass` _SASS compiler environment directory_
 
 ## Technology specifications
 
@@ -30,7 +29,14 @@ Two official plugins are installed:
 
 ### 2. SASS - css styling compiler
 
- `sass --version` <br>
- 1.77.2 compiled with dart2js 3.4.0
+`sass --version` <br>
+1.77.2 compiled with dart2js 3.4.0
 
- Documentation URL: [https://sass-lang.com/guide/] (<https://sass-lang.com/guide/>)
+Documentation URL: [https://sass-lang.com/guide/] (<https://sass-lang.com/guide/>)
+
+#### CSS compiling instructions.
+
+The compiled CSS files are ignored via .gitignore. Before running the application, compile the latest SCSS files by following these steps:
+
+1. Open terminal and navigate under the _UIdev/UIdev.sass_ directory: `cd UIdev/UIdev.sass`
+2. Compile the ands.scss file: `sass --watch ands.scss ../UIdev.react/eRunnerGUI/src/css/ands.css`
