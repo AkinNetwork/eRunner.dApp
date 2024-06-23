@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Ignore compiled css files. Compile the SASS files before runing the application.
-css/*
+src/css/*

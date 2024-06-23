@@ -16,3 +16,6 @@ UIDev/UIDev.sass/.DS_Store
 *.njsproj
 *.sln
 *.sw?
+
+# Autometed files
+UIDev.react/eRunnerGUI/src/css/*
