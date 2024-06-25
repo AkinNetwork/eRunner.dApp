@@ -1,0 +1,16 @@
+// themes/akin_network/light/_variables.scss
+@import "../_primitives";
+
+// DEFAULTS
+// Typography default
+$font-colour: $akin-900 !default;
+// Headers defaults
+$h1-font-colour: $font-colour;
+$h2-font-colour: $font-colour;
+$h3-font-colour: $font-colour;
+$h4-font-colour: $font-colour;
+$h5-font-colour: $font-colour;
+$h6-font-colour: $font-colour;
+// Paragraphs and lists defaults
+$p-font-colour: $font-colour;
+$li-font-colour: $font-colour;

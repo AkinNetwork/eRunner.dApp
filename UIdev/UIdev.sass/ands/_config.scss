@@ -1,0 +1,146 @@
+// Primitives management
+@import "_primitives";
+
+// Theme configuration
+$themes: "akin_network", "akin_digicraft", "akin_martech", "akin_gethub";
+//Mode configuration
+$modes: "light", "dark";
+
+$theme-selector: "akin_network"; // Configurable: THEME LOOK AND FEEL
+$mode-selector: "light"; // Configurable: THEME MODE VARIABLES
+
+$mode-path: "akin_network/light/_variables";
+
+// @each $theme in $themes {
+//   @if $theme == $theme-selector {
+//     // Manage the mode imports
+//     @each $mode in $modes {
+//       @if $mode == $mode-selector {
+//         // Construct the path to the variables file
+//         $mode-path: "ands/#{$theme}/#{$mode}/_variables";
+//       }
+//     }
+//   }
+// }
+
+// Import the variables file
+@import "akin_network/light/variables";
+
+// Metrics convertor unit
+$rem: 16; //Configurable: FONT SIZE BASE
+
+// Media queries for responsive design
+// Define breakpoints using imported variables
+$breakpoints: (
+  "xxs": $size-0,
+  "xs": $size-576,
+  "sm": $size-768,
+  "md": $size-992,
+  "lg": $size-1200,
+  "xl": $size-1440,
+  "xxl": $size-1680,
+);
+
+// Mixin for media queries
+@mixin respond-to($breakpoints-map) {
+  @each $breakpoint, $value in $breakpoints-map {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $min-width: map-get($breakpoints, $breakpoint);
+      @media (min-width: $min-width) {
+        @content ($breakpoint, $value);
+      }
+    } @else {
+      @warn "No value found for `#{$breakpoint}`. Available breakpoints: #{map-keys($breakpoints)}";
+    }
+  }
+}
+
+// Web font imports from GOOGLE FONTS
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+$font-family: "Nunito Sans", sans-serif;
+
+// Typography configuration
+
+// H1 style configuration
+$h1-font-size: (
+  // Configurable: H1 FONT SIZE
+  "xxs": $size-32,
+  "xs": $size-32,
+  "sm": $size-40,
+  "md": $size-48,
+  "lg": $size-48,
+  "xl": $size-64,
+  "xxl": $size-64
+);
+$h1-font-weight: (
+  // Configurable: H1 FONT WEIGHT
+  "xxs": 300,
+  "xs": 300,
+  "sm": 300,
+  "md": 200,
+  "lg": 200,
+  "xl": 200,
+  "xxl": 200
+);
+$h1-line-height: (
+  // Configurable: H1 FONT WEIGHT
+  "xxs": 1.2,
+  "xs": 1.2,
+  "sm": 1.2,
+  "md": 1.2,
+  "lg": 1.2,
+  "xl": 1.4,
+  "xxl": 1.4
+);
+$h1-letter-space: (
+  // Configurable: H1 FONT WEIGHT
+  "xxs": 0.015rem,
+  "xs": 0.015rem,
+  "sm": 0.015rem,
+  "md": 0.025rem,
+  "lg": 0.025rem,
+  "xl": 0.025rem,
+  "xxl": 0.025rem
+);
+
+// H2 style configuration
+$h2-font-size: (
+  // Configurable: H1 FONT SIZE
+  "xxs": $size-24,
+  "xs": $size-24,
+  "sm": $size-32,
+  "md": $size-40,
+  "lg": $size-40,
+  "xl": $size-56,
+  "xxl": $size-56
+);
+$h2-font-weight: (
+  // Configurable: H1 FONT WEIGHT
+  "xxs": 300,
+  "xs": 300,
+  "sm": 300,
+  "md": 200,
+  "lg": 200,
+  "xl": 200,
+  "xxl": 200
+);
+$h2-line-height: (
+  // Configurable: H1 FONT WEIGHT
+  "xxs": 1.2,
+  "xs": 1.2,
+  "sm": 1.2,
+  "md": 1.2,
+  "lg": 1.2,
+  "xl": 1.4,
+  "xxl": 1.4
+);
+$h2-letter-space: (
+  // Configurable: H1 FONT WEIGHT
+  "xxs": 0.015rem,
+  "xs": 0.015rem,
+  "sm": 0.015rem,
+  "md": 0.025rem,
+  "lg": 0.025rem,
+  "xl": 0.025rem,
+  "xxl": 0.025rem
+);

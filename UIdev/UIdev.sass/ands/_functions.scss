@@ -1,0 +1,7 @@
+@import "_config";
+
+// Pixel to Rem conversion function
+
+@function px-to-rem($px) {
+  @return #{$px / $rem}rem;
+}
