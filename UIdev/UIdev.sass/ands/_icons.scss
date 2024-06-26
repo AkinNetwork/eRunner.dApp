@@ -1,0 +1,71 @@
+// Import configuration variables
+@import "config";
+
+// Define @font-face for icon font
+@font-face {
+  font-family: "#{$icon-ands-font-family}";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  src: url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.eot");
+  src: url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.woff2")
+      format("woff2"),
+    url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.woff") format("woff"),
+    url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.ttf")
+      format("truetype"),
+    url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.svg#{$icon-ands-font-family}")
+      format("svg");
+}
+
+// Global styles for all icon classes
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "#{$icon-ands-font-family}" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-font-smoothing: antialiased;
+}
+
+// Define the icons map with Unicode values
+$icons: (
+  ands-beg: "\e900",
+  ands-delivery: "\e901",
+  ands-message: "\e902",
+  ands-tip: "\e903",
+  ands-vault: "\e904",
+  ands-close: "\e905",
+  ands-delete: "\e906",
+  ands-down: "\e907",
+  ands-exit: "\e908",
+  ands-expand: "\e909",
+  ands-left: "\e90a",
+  ands-menu: "\e90b",
+  ands-minus: "\e90c",
+  ands-plus: "\e90d",
+  ands-pprogress: "\e90e",
+  ands-progress: "\e90f",
+  ands-right: "\e910",
+  ands-search: "\e911",
+  ands-up: "\e912",
+  ands-akin-logo: "\e913",
+  ands-amenu: "\e914",
+  ands-legal: "\e915",
+);
+
+// Loop through the icons map and generate CSS rules
+@each $name, $unicode in $icons {
+  .icon-#{$name} {
+    &:before {
+      content: $unicode;
+    }
+  }
+}

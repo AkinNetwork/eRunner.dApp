@@ -1,5 +1,5 @@
 // Primitives management
-@import "_primitives";
+@import "primitives";
 
 // Theme configuration
 $themes: "akin_network", "akin_digicraft", "akin_martech", "akin_gethub";
@@ -10,18 +10,6 @@ $theme-selector: "akin_network"; // Configurable: THEME LOOK AND FEEL
 $mode-selector: "light"; // Configurable: THEME MODE VARIABLES
 
 $mode-path: "akin_network/light/_variables";
-
-// @each $theme in $themes {
-//   @if $theme == $theme-selector {
-//     // Manage the mode imports
-//     @each $mode in $modes {
-//       @if $mode == $mode-selector {
-//         // Construct the path to the variables file
-//         $mode-path: "ands/#{$theme}/#{$mode}/_variables";
-//       }
-//     }
-//   }
-// }
 
 // Import the variables file
 @import "akin_network/light/variables";
@@ -58,6 +46,19 @@ $breakpoints: (
 // Web font imports from GOOGLE FONTS
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 $font-family: "Nunito Sans", sans-serif;
+
+// Icons imports and configuration
+
+/* 
+ICON FONTS 
+Font Assets location
+
+local path: "../assets/fonts"
+git page repository: https://akinnetwork.github.io/andsicon/fonts/
+*/
+
+$icon-ands-font-family: "ands-icons" !default;
+$icon-ands-font-path: "../assets/fonts" !default; //Configurable: FONT path
 
 // Typography configuration
 
