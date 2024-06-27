@@ -1,0 +1,31 @@
+// Mixin
+
+// Mixin for media queries
+@mixin respond-to($breakpoints-map) {
+  @each $breakpoint, $value in $breakpoints-map {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $min-width: map-get($breakpoints, $breakpoint);
+      @media (min-width: $min-width) {
+        @content ($breakpoint, $value);
+      }
+    } @else {
+      @warn "No value found for `#{$breakpoint}`. Available breakpoints: #{map-keys($breakpoints)}";
+    }
+  }
+}
+
+// Mixin for flex
+// Mixin for flex container properties
+@mixin flex-container($properties: $flex-defaults) {
+  display: flex;
+  @each $prop, $value in $properties {
+    #{$prop}: $value;
+  }
+}
+
+// Flex item mixin
+@mixin flex-item($properties: $flex-item-defaults) {
+  @each $prop, $value in $properties {
+    #{$prop}: $value;
+  }
+}

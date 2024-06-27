@@ -29,19 +29,35 @@ $breakpoints: (
   "xxl": $size-1680,
 );
 
-// Mixin for media queries
-@mixin respond-to($breakpoints-map) {
-  @each $breakpoint, $value in $breakpoints-map {
-    @if map-has-key($breakpoints, $breakpoint) {
-      $min-width: map-get($breakpoints, $breakpoint);
-      @media (min-width: $min-width) {
-        @content ($breakpoint, $value);
-      }
-    } @else {
-      @warn "No value found for `#{$breakpoint}`. Available breakpoints: #{map-keys($breakpoints)}";
-    }
-  }
-}
+// Container flex defaults
+
+$flex-defaults: (
+  flex-direction: column,
+  justify-content: flex-start,
+  align-items: flex-start,
+  align-content: stretch,
+  flex-wrap: nowrap,
+  gap: $size-0,
+);
+
+$flex-item-defaults: (
+  flex-grow: 0,
+  flex-shrink: 1,
+  basis: auto,
+  order: auto,
+  align-self: flex-start,
+);
+
+// Define flex properties for specific breakpoints
+$flex-breakpoints-config: (
+  "xxs": $size-32,
+  "xs": $size-32,
+  "sm": $size-40,
+  "md": $size-48,
+  "lg": $size-48,
+  "xl": $size-64,
+  "xxl": $size-64,
+);
 
 // Web font imports from GOOGLE FONTS
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");

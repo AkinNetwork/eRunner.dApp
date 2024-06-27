@@ -1,0 +1,19 @@
+// Main Styling - this will be rerendered depending of the configured context - theme/mode
+@import "config";
+@import "mixin";
+
+body {
+  background-color: $background-colour;
+  color: $font-colour;
+}
+
+/* Container for app */
+// Applying flex properties for .App class with responsive adjustments using respond-to mixin
+.App {
+  position: relative;
+  @include respond-to($flex-breakpoints-config) using ($breakpoint, $value) {
+    @include flex-container(
+      $value
+    ); // Use $value for flex properties at each breakpoint
+  }
+}

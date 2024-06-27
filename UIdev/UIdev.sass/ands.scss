@@ -20,6 +20,6 @@ We import the contributor's variables before the AnDS variables.
 Some of these variables may be overwritten by the AnDS declarations.
 
 */
-
+@import "ands/main";
 @import "ands/typography";
 @import "ands/icons";

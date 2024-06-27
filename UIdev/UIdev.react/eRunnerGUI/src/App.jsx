@@ -1,12 +1,15 @@
+import "./css/ands.css";
+import "./components/Hero";
+import Hero from "./components/Hero";
+
 function App() {
   return (
     <>
       <div>
-        <h1>eRunner GUI</h1>
+        <Hero />
       </div>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
