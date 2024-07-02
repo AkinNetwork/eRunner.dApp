@@ -19,3 +19,12 @@ UIDev/UIDev.sass/.DS_Store
 
 # Autometed files
 UIDev.react/eRunnerGUI/src/css/*
+
+# Ignore log files
+*.log
+
+# Ignore all .css files
+*.css
+
+# Ignore node_modules folder
+node_modules/

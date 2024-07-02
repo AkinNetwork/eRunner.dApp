@@ -26,3 +26,9 @@ dist-ssr
 
 # Ignore compiled css files. Compile the SASS files before runing the application.
 src/css/*
+
+# Ignore log files
+*.log
+
+# Ignore all .css files
+*.css
