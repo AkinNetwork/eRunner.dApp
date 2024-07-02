@@ -1,12 +1,12 @@
 import "./css/ands.css";
 import "./components/Hero";
-import Hero from "./components/Hero";
+import BannerSVG from "./components/svg/BannerSVG/BannerSVG";
 
 function App() {
   return (
     <>
       <div>
-        <Hero />
+        <BannerSVG />
       </div>
     </>
   );

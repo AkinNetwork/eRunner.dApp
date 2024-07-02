@@ -29,3 +29,17 @@
     #{$prop}: $value;
   }
 }
+
+// SVG mixin
+@mixin clip-path-rect($id, $width, $height, $colour, $translateX, $translateY) {
+  clip-path: url("#{$id}");
+
+  #{$id} {
+    rect {
+      width: $width;
+      height: $height;
+      fill: $colour;
+      transform: translate($translateX, $translateY);
+    }
+  }
+}

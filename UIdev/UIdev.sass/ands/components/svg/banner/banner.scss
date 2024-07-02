@@ -1,0 +1,58 @@
+/* 
+@component BannerSVG
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+*/
+
+@import "../../../config";
+
+// VARIABLES
+// 1. sizes
+$banner-width: $size-832;
+$banner-height: $size-496;
+$banner-view-box: "0 0 832 496";
+
+// 2. fills and strokes
+$banner-fill: "none";
+// cell
+$cell-light: $brand-colour-light;
+$cell-brand: $brand-colour;
+$cell-dark: $brand-colour-dark;
+
+$connector-stroke-colour: $akin-neutral-300;
+$connector-strike-width: 0.5;
+
+$joint-fill-light: $akin-neutral-200;
+$joint-fill-dark: $akin-neutral-600;
+
+// Banner cells
+svg.banner {
+  width: $banner-width;
+  height: $banner-height;
+
+  line {
+    stroke: $connector-stroke-colour;
+    stroke-width: $connector-strike-width;
+  }
+
+  circle {
+    &.dark {
+      fill: $joint-fill-dark;
+    }
+    &.light {
+      fill: $joint-fill-light;
+    }
+  }
+
+  path {
+    &.light {
+      fill: $cell-light;
+    }
+    &.brand {
+      fill: $cell-brand;
+    }
+    &.dark {
+      fill: $cell-dark;
+    }
+  }
+}
