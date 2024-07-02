@@ -25,6 +25,7 @@ UIDev.react/eRunnerGUI/src/css/*
 
 # Ignore all .css files
 *.css
+*.css.map
 
 # Ignore node_modules folder
 node_modules/
