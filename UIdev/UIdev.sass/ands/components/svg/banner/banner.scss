@@ -44,7 +44,8 @@ svg.banner {
     }
   }
 
-  path {
+  path,
+  rect {
     &.light {
       fill: $cell-light;
     }
