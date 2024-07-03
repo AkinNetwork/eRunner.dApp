@@ -67,28 +67,24 @@
           "cx": 24,
           "cy": 24,
           "r": 2,
-          "className": "dark",
           "hide": false
         },
         {
           "cx": 24,
           "cy": 80,
           "r": 2,
-          "className": "dark",
           "hide": false
         },
         {
           "cx": 80,
           "cy": 24,
           "r": 2,
-          "className": "dark",
           "hide": false
         },
         {
           "cx": 80,
           "cy": 80,
           "r": 2,
-          "className": "dark",
           "hide": false
         }
       ]
@@ -96,7 +92,7 @@
   },
   "banner": {
     "viewBox": {
-      "style": "banner",
+      "className": "banner",
       "width": 832,
       "height": 496,
       "viewBox": "0 0 832 496",
@@ -112,9 +108,10 @@
           "fill": "white"
         },
         "cells": {
-          "number": 48,
           "class": "cell",
-          "rates": {
+          "rendering": {
+            "x": 7,
+            "y": 8,
             "transform": {
               "x": 104,
               "y": 56

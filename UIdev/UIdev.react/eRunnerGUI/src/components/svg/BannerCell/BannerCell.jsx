@@ -26,7 +26,7 @@ function BannerCell() {
 
   const { cell } = svgData;
   const { viewBox, defs, elements } = cell;
-  //   console.log(cell);
+  const circleClassName = elements.rect.className === "dark" ? "light" : "dark";
 
   return (
     <svg
@@ -37,7 +37,7 @@ function BannerCell() {
       className={viewBox.className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath="url(#clip0)">
+      <g clipPath="url(#cell0)">
         <path className={elements.path.className} d={elements.path.d} />
         {elements.lines.map((line, index) => (
           <line
@@ -55,12 +55,12 @@ function BannerCell() {
             cx={circle.cx}
             cy={circle.cy}
             r={circle.r}
-            className={circle.className}
+            className={circleClassName}
           />
         ))}
       </g>
       <defs>
-        <clipPath id="clip0">
+        <clipPath id="cell0">
           <rect
             width={defs.clipPath.type.width}
             height={defs.clipPath.type.height}
