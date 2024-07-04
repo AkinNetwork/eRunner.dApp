@@ -1,11 +1,10 @@
 import "./css/ands.css";
-import BannerCell from "./components/svg/BannerCell/BannerCell";
-
+import BannerComposite from "./components/svg/BannerComposite/BannerComposite";
 function App() {
   return (
     <>
       <div>
-        <BannerCell />
+        <BannerComposite />
       </div>
     </>
   );
