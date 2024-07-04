@@ -33,3 +33,6 @@ src/css/*
 # Ignore all .css files
 *.css
 *.css.map
+
+# Ignore automated generated schemas json files
+public/schemas/*
