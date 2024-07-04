@@ -1,3 +1,11 @@
+/* 
+@AkinNetwork - Utils
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+
+Notes: Schema rendering configuration
+*/
+
 /* eslint-disable no-undef */
 import { config } from "dotenv";
 import { resolve } from "path";

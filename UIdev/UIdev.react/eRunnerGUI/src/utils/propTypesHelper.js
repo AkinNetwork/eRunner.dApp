@@ -1,3 +1,11 @@
+/* 
+@AkinNetwork - Utils
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+
+Notes: Maps the propTypes for the banner Schema
+*/
+
 import PropTypes from "prop-types";
 import schema from "../../public/data/bannerSchema.json";
 

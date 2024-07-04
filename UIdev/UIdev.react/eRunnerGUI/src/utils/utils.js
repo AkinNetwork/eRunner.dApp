@@ -1,5 +1,5 @@
 /* 
-@AkinNetwork - Utilities
+@AkinNetwork - Utils
 @author: Margareta.Sandor@akin.network
 Powered by @AkinTechnologies
 

@@ -1,3 +1,11 @@
+/* 
+@AkinNetwork - Scripts
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+
+Notes: Schema rendering - Akin Smart Contracts
+*/
+
 /* eslint-disable no-undef */
 const fs = require("fs");
 const path = require("path");

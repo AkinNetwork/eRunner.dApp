@@ -1,3 +1,11 @@
+/* 
+@AkinNetwork - Scripts
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+
+Notes: Schema rendering - Akin Smart Contracts
+*/
+
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { dirname, join, resolve } from "path";
 import { fileURLToPath } from "url";
