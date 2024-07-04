@@ -36,3 +36,4 @@ src/css/*
 
 # Ignore automated generated schemas json files
 public/schemas/*.json
+public/schemas
