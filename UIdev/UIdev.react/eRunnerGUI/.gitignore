@@ -35,5 +35,5 @@ src/css/*
 *.css.map
 
 # Ignore automated generated schemas json files
-public/schemas/*.json
-public/schemas
+scr/data/schemas/*.json
+scr/data/schemas/*
