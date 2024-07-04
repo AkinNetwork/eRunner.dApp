@@ -6,33 +6,25 @@ Powered by @AkinTechnologies
 Notes: Dynamic rendering of a banner cell svg composition
 */
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useMemo } from "react";
+import PropTypes from "prop-types";
 import "./BannerCellSVG.css";
 
-function BannerCell() {
-  const jsonData = "./data/banner.json";
-  const [svgData, setSvgData] = useState(null);
-
-  useEffect(() => {
-    // Fetch the JSON data
-    axios
-      .get(jsonData)
-      .then((response) => setSvgData(response.data))
-      .catch((error) => console.error("Error fetching SVG data:", error));
-  }, []);
-
-  if (!svgData) return null;
-
-  const { cell } = svgData;
+function BannerCell({ x, y, data }) {
+  const { cell } = data;
   const { viewBox, defs, elements } = cell;
-  const circleClassName = elements.rect.className === "dark" ? "light" : "dark";
+
+  const circleClassName = useMemo(() => {
+    return elements.path.className === "dark" ? "light" : "dark";
+  }, [elements.path.className]);
 
   return (
     <svg
+      x={x}
+      y={y}
       width={viewBox.width}
       height={viewBox.height}
-      viewBox={viewBox.viewBox}
+      viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
       fill={viewBox.fill}
       className={viewBox.className}
       xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +41,7 @@ function BannerCell() {
             className={line.className}
           />
         ))}
+
         {elements.circles.map((circle, index) => (
           <circle
             key={index}
@@ -72,4 +65,55 @@ function BannerCell() {
   );
 }
 
-export default BannerCell;
+BannerCell.propTypes = {
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired,
+  data: PropTypes.shape({
+    cell: PropTypes.shape({
+      viewBox: PropTypes.shape({
+        className: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number,
+        viewBox: PropTypes.string,
+        fill: PropTypes.string,
+      }).isRequired,
+      defs: PropTypes.shape({
+        clipPath: PropTypes.shape({
+          class: PropTypes.string,
+          type: PropTypes.shape({
+            name: PropTypes.string,
+            width: PropTypes.number,
+            height: PropTypes.number,
+            fill: PropTypes.string,
+          }),
+          sets: PropTypes.bool,
+        }),
+      }).isRequired,
+      elements: PropTypes.shape({
+        path: PropTypes.shape({
+          d: PropTypes.string,
+          className: PropTypes.string,
+        }).isRequired,
+        lines: PropTypes.arrayOf(
+          PropTypes.shape({
+            x1: PropTypes.number,
+            y1: PropTypes.number,
+            x2: PropTypes.number,
+            y2: PropTypes.number,
+            className: PropTypes.string,
+          })
+        ).isRequired,
+        circles: PropTypes.arrayOf(
+          PropTypes.shape({
+            cx: PropTypes.number,
+            cy: PropTypes.number,
+            r: PropTypes.number,
+            hide: PropTypes.bool,
+          })
+        ).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export default React.memo(BannerCell);
