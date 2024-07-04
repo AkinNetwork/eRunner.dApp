@@ -7,7 +7,7 @@ Notes: Maps the propTypes for the banner Schema
 */
 
 import PropTypes from "prop-types";
-import schema from "../../public/data/bannerSchema.json";
+import schema from "../data/schemas/bannerSchema.json";
 
 const typeMap = {
   string: PropTypes.string,
