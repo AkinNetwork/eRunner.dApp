@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <div>
-        <BannerComposite />
+        <BannerComposite horizontalOverlap={0} verticalOverlap={56} />
       </div>
     </>
   );

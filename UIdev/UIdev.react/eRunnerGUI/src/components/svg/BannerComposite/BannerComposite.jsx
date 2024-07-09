@@ -8,10 +8,11 @@ Notes: Dynamic rendering of a banner svg composition
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 import BannerCell from "../BannerCell/BannerCell";
 
-function BannerComposite() {
-  const bannerJSON = "/data/banner.json";
+function BannerComposite({ horizontalOverlap = 0, verticalOverlap = 56 }) {
+  const bannerJSON = "/data/cell.json";
   const [svgData, setSvgData] = useState(null);
 
   useEffect(() => {
@@ -29,15 +30,15 @@ function BannerComposite() {
   const cellWidth = 104;
   const cellHeight = 104;
 
-  const bannerWidth = 832;
-  const bannerHeight = 496;
+  const bannerWidth = cellWidth * columns - horizontalOverlap * (columns - 1);
+  const bannerHeight = cellHeight * rows - verticalOverlap * (rows - 1);
 
   const cells = [];
 
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < columns; col++) {
-      const x = col * cellWidth;
-      const y = row * cellHeight;
+      const x = col * (cellWidth - horizontalOverlap);
+      const y = row * (cellHeight - verticalOverlap);
       cells.push(
         <BannerCell key={`${row}-${col}`} x={x} y={y} data={svgData} />
       );
@@ -55,5 +56,10 @@ function BannerComposite() {
     </svg>
   );
 }
+
+BannerComposite.propTypes = {
+  horizontalOverlap: PropTypes.number,
+  verticalOverlap: PropTypes.number,
+};
 
 export default BannerComposite;
