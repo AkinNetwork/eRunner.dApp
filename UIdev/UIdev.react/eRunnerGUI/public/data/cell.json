@@ -5,6 +5,7 @@
       "className": "banner",
       "width": 104,
       "height": 104,
+      "viewBox": "0 0 104 104",
       "fill": "none"
     },
     "defs": {
@@ -25,11 +26,13 @@
         "y": 12,
         "width": 88,
         "height": 80,
-        "className": "dark"
+        "className": "dark",
+        "isHidden": false
       },
       "path": {
         "className": "dark",
-        "d": "M8 12C8 9.79086 9.79086 8 12 8H92C94.2091 8 96 9.79086 96 12V92C96 94.2091 94.2091 96 92 96H12C9.79086 96 8 94.2091 8 92V12Z"
+        "d": "M8 12C8 9.79086 9.79086 8 12 8H92C94.2091 8 96 9.79086 96 12V92C96 94.2091 94.2091 96 92 96H12C9.79086 96 8 94.2091 8 92V12Z",
+        "isHidden": false
       },
       "lines": [
         { "x1": 80.25, "y1": 0, "x2": 80.25, "y2": 104, "isHidden": false },
@@ -44,37 +47,5 @@
         { "cx": 80, "cy": 80, "r": 2, "isHidden": false }
       ]
     }
-  },
-  "banner": {
-    "viewBox": {
-      "className": "banner",
-      "width": 832,
-      "height": 496,
-      "viewBox": "0 0 832 496",
-      "fill": "none"
-    },
-    "defs": {
-      "clipPath": {
-        "class": "banner",
-        "type": {
-          "name": "rect",
-          "width": 832,
-          "height": 496,
-          "fill": "white"
-        },
-        "cells": {
-          "class": "cell",
-          "rendering": {
-            "x": 7,
-            "y": 8,
-            "transform": {
-              "x": 104,
-              "y": 56
-            }
-          }
-        }
-      }
-    },
-    "components": {}
   }
 }

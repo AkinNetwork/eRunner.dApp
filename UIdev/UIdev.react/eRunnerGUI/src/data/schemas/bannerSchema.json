@@ -25,11 +25,13 @@
         "y": "number",
         "width": "number",
         "height": "number",
-        "className": "string"
+        "className": "string",
+        "isHidden": "boolean"
       },
       "path": {
         "className": "string",
-        "d": "string"
+        "d": "string",
+        "isHidden": "boolean"
       },
       "lines": [
         {
@@ -49,37 +51,5 @@
         }
       ]
     }
-  },
-  "banner": {
-    "viewBox": {
-      "className": "string",
-      "width": "number",
-      "height": "number",
-      "viewBox": "string",
-      "fill": "string"
-    },
-    "defs": {
-      "clipPath": {
-        "class": "string",
-        "type": {
-          "name": "string",
-          "width": "number",
-          "height": "number",
-          "fill": "string"
-        },
-        "cells": {
-          "class": "string",
-          "rendering": {
-            "x": "number",
-            "y": "number",
-            "transform": {
-              "x": "number",
-              "y": "number"
-            }
-          }
-        }
-      }
-    },
-    "components": {}
   }
 }

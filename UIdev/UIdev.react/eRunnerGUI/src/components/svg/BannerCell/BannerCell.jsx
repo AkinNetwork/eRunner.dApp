@@ -13,11 +13,11 @@ import "./BannerCellSVG.css"; // Import the CSS file
 
 function BannerCell({ x, y, data }) {
   const { cell } = data;
-  const { viewBox, defs, elements } = cell;
+  const { id, viewBox, defs, elements } = cell;
 
   const circleClassName = useMemo(() => {
-    return elements.rect.className === "dark" ? "light" : "dark";
-  }, [elements.rect.className]);
+    return elements.path.className === "dark" ? "light" : "dark";
+  }, [elements.path.className]);
 
   return (
     <svg
@@ -30,14 +30,20 @@ function BannerCell({ x, y, data }) {
       className={viewBox.className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath="url(#clip0)">
-        <rect {...elements.rect} />
-        {elements.path && <path {...elements.path} />}
+      <g clipPath={`url(#${id}-0)`}>
+        {(() => {
+          // Destructure isHidden and render path if it's not hidden
+          const { isHidden, ...pathProps } = elements.path;
+          return !isHidden && <path {...pathProps} />;
+        })()}
+
         {elements.lines.map((line, index) => {
+          // Destructure isHidden and render line if it's not hidden
           const { isHidden, ...lineProps } = line;
           return !isHidden && <line key={index} {...lineProps} />;
         })}
         {elements.circles.map((circle, index) => {
+          // Destructure isHidden and render circle if it's not hidden
           const { isHidden, ...circleProps } = circle;
           return (
             !isHidden && (
@@ -51,7 +57,7 @@ function BannerCell({ x, y, data }) {
         })}
       </g>
       <defs>
-        <clipPath id="clip0">
+        <clipPath id={`${id}-0`}>
           <rect {...defs.clipPath.type} />
         </clipPath>
       </defs>
