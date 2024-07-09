@@ -1,10 +1,19 @@
+/* 
+@AkinNetwork - Scripts
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+
+Notes: Cell config renderer- Akin Smart Contracts
+*/
+
 /* eslint-disable no-undef */
 const fs = require("fs").promises;
 const path = require("path");
+require("dotenv").config();
 
 // Paths
-const sourcePath = path.resolve(process.cwd(), "public/data/cell.json");
-const destinationDir = path.resolve(process.cwd(), "public/data/banner");
+const sourcePath = path.resolve(process.cwd(), process.env.SOURCE_PATH);
+const destinationDir = path.resolve(process.cwd(), process.env.DESTINATION_DIR);
 
 // Grid dimensions
 const rows = 7;

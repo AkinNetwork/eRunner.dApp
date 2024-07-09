@@ -1,10 +1,21 @@
+/* 
+@AkinNetwork - Scripts
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+
+Notes: Cell config renderer- Akin Smart Contracts
+*/
+
 /* eslint-disable no-undef */
 import { promises as fs } from "fs";
 import { resolve, join } from "path";
+import { config } from "dotenv";
 
-// Paths
-const sourcePath = resolve(process.cwd(), "public/data/cell.json");
-const destinationDir = resolve(process.cwd(), "public/data/banner");
+// Load environment variables from .env file
+config();
+
+const sourcePath = resolve(process.cwd(), process.env.SOURCE_PATH);
+const destinationDir = resolve(process.cwd(), process.env.DESTINATION_DIR);
 
 // Grid dimensions
 const rows = 7;
