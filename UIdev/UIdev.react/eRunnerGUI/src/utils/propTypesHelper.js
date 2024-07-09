@@ -25,7 +25,14 @@ function createPropTypes(schema) {
       if (typeof type === "object" && !Array.isArray(type)) {
         propTypes[key] = PropTypes.shape(createPropTypes(type)).isRequired;
       } else if (Array.isArray(type)) {
-        propTypes[key] = PropTypes.arrayOf(createPropTypes(type[0])).isRequired;
+        const arrayItemType = typeof type[0];
+        if (arrayItemType === "object") {
+          propTypes[key] = PropTypes.arrayOf(
+            PropTypes.shape(createPropTypes(type[0]))
+          ).isRequired;
+        } else {
+          propTypes[key] = PropTypes.arrayOf(typeMap[arrayItemType]).isRequired;
+        }
       } else {
         propTypes[key] = typeMap[type].isRequired;
       }

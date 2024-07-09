@@ -13,7 +13,8 @@ import getConfig from "../src/utils/config.mjs"; // Adjust path as necessary
 
 const SCHEMA_PATH = getConfig("SCHEMA_PATH");
 
-console.log(`SCHEMA_PATH is: ${SCHEMA_PATH}`); // Add this line
+// Print the SCHEMA_PATH value
+console.log(`SCHEMA_PATH is: ${SCHEMA_PATH}`);
 
 const typeMap = {
   string: "string",

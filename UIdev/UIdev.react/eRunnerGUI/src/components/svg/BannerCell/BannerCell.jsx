@@ -11,8 +11,7 @@ import PropTypes from "prop-types";
 import propTypes from "../../../utils/propTypesHelper";
 import "./BannerCellSVG.css"; // Import the CSS file
 
-// eslint-disable-next-line react-refresh/only-export-components
-function BannerCellSVG({ x, y, data }) {
+function BannerCell({ x, y, data }) {
   const { cell } = data;
   const { viewBox, defs, elements } = cell;
 
@@ -32,16 +31,24 @@ function BannerCellSVG({ x, y, data }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0)">
-        <path {...elements.path} />
-        {elements.lines.map((line, index) => (
-          <line key={index} {...line} />
-        ))}
-        {elements.circles.map(
-          (circle, index) =>
-            !circle.hide && (
-              <circle key={index} {...circle} className={circleClassName} />
+        <rect {...elements.rect} />
+        {elements.path && <path {...elements.path} />}
+        {elements.lines.map((line, index) => {
+          const { isHidden, ...lineProps } = line;
+          return !isHidden && <line key={index} {...lineProps} />;
+        })}
+        {elements.circles.map((circle, index) => {
+          const { isHidden, ...circleProps } = circle;
+          return (
+            !isHidden && (
+              <circle
+                key={index}
+                {...circleProps}
+                className={circleClassName}
+              />
             )
-        )}
+          );
+        })}
       </g>
       <defs>
         <clipPath id="clip0">
@@ -52,11 +59,14 @@ function BannerCellSVG({ x, y, data }) {
   );
 }
 
-BannerCellSVG.propTypes = {
+BannerCell.propTypes = {
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
   data: PropTypes.shape(propTypes).isRequired,
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
-export default React.memo(BannerCellSVG);
+// Set the display name for the memoized component
+const MemoizedBannerCell = React.memo(BannerCell);
+MemoizedBannerCell.displayName = "BannerCell";
+
+export default MemoizedBannerCell;

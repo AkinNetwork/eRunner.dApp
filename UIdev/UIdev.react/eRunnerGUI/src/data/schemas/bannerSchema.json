@@ -37,7 +37,7 @@
           "y1": "number",
           "x2": "number",
           "y2": "number",
-          "hide": "boolean"
+          "isHidden": "boolean"
         }
       ],
       "circles": [
@@ -45,7 +45,7 @@
           "cx": "number",
           "cy": "number",
           "r": "number",
-          "hide": "boolean"
+          "isHidden": "boolean"
         }
       ]
     }
