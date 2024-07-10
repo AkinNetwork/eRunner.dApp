@@ -6,15 +6,17 @@ Powered by @AkinTechnologies
 Notes: Schema rendering - Akin Smart Contracts
 */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { dirname, join, resolve } from "path";
-import { fileURLToPath } from "url";
+// import { readFileSync, writeFileSync, existsSync } from "fs";
+// import { dirname, join, resolve } from "path";
+// import { fileURLToPath } from "url";
+
+/* eslint-disable no-undef */
+import { promises as fs } from "fs";
+import { resolve, join } from "path";
 import getConfig from "../src/utils/config.mjs"; // Adjust path as necessary
 
-const SCHEMA_PATH = getConfig("SCHEMA_PATH");
-
-// Print the SCHEMA_PATH value
-console.log(`SCHEMA_PATH is: ${SCHEMA_PATH}`);
+const bannerDir = resolve(process.cwd(), getConfig("DESTINATION_DIR"));
+const outputDir = resolve(process.cwd(), getConfig("SCHEMA_PATH"));
 
 const typeMap = {
   string: "string",
@@ -52,19 +54,27 @@ function generateSchema(data) {
   return schema;
 }
 
-function createSchema() {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  const configPath = resolve(__dirname, "..", SCHEMA_PATH);
-  if (!existsSync(configPath)) {
-    throw new Error(`Config file not found: ${configPath}`);
+async function createSchemas() {
+  try {
+    const files = await fs.readdir(bannerDir);
+
+    await fs.mkdir(outputDir, { recursive: true });
+
+    for (const file of files) {
+      const filePath = join(bannerDir, file);
+      const fileData = await fs.readFile(filePath, "utf-8");
+      const jsonData = JSON.parse(fileData);
+      const schema = generateSchema(jsonData);
+      const schemaFilePath = join(
+        outputDir,
+        file.replace(".json", "-schema.json")
+      );
+      await fs.writeFile(schemaFilePath, JSON.stringify(schema, null, 2));
+      console.log(`Generated schema for ${file} at ${schemaFilePath}`);
+    }
+  } catch (error) {
+    console.error("Error generating schemas:", error);
   }
-  const config = JSON.parse(readFileSync(configPath, "utf-8"));
-  const schema = generateSchema(config);
-  const outputDir = dirname(configPath);
-  const outputPath = join(outputDir, "bannerSchema.json");
-  writeFileSync(outputPath, JSON.stringify(schema, null, 2));
-  console.log(`Schema generated successfully at ${outputPath}`);
 }
 
-createSchema();
+createSchemas();

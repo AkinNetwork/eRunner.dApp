@@ -7,14 +7,12 @@ Notes: Schema rendering - Akin Smart Contracts
 */
 
 /* eslint-disable no-undef */
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
-const getConfig = require("../src/utils/config.cjs"); // Adjust path as necessary
+const getConfig = require("../src/utils/config.cjs");
 
-const SCHEMA_PATH = getConfig("SCHEMA_PATH");
-
-// Print the SCHEMA_PATH value
-console.log(`SCHEMA_PATH is: ${SCHEMA_PATH}`);
+const bannerDir = path.resolve(process.cwd(), getConfig("DESTINATION_DIR"));
+const outputDir = path.resolve(process.cwd(), getConfig("SCHEMA_PATH"));
 
 const typeMap = {
   string: "string",
@@ -52,17 +50,27 @@ function generateSchema(data) {
   return schema;
 }
 
-function createSchema() {
-  const configPath = path.resolve(__dirname, "..", SCHEMA_PATH);
-  if (!fs.existsSync(configPath)) {
-    throw new Error(`Config file not found: ${configPath}`);
+async function createSchemas() {
+  try {
+    const files = await fs.readdir(bannerDir);
+
+    await fs.mkdir(outputDir, { recursive: true });
+
+    for (const file of files) {
+      const filePath = path.join(bannerDir, file);
+      const fileData = await fs.readFile(filePath, "utf-8");
+      const jsonData = JSON.parse(fileData);
+      const schema = generateSchema(jsonData);
+      const schemaFilePath = path.join(
+        outputDir,
+        file.replace(".json", "-schema.json")
+      );
+      await fs.writeFile(schemaFilePath, JSON.stringify(schema, null, 2));
+      console.log(`Generated schema for ${file} at ${schemaFilePath}`);
+    }
+  } catch (error) {
+    console.error("Error generating schemas:", error);
   }
-  const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
-  const schema = generateSchema(config);
-  const outputDir = path.dirname(configPath);
-  const outputPath = path.join(outputDir, "bannerSchema.json");
-  fs.writeFileSync(outputPath, JSON.stringify(schema, null, 2));
-  console.log(`Schema generated successfully at ${outputPath}`);
 }
 
-createSchema();
+createSchemas();
