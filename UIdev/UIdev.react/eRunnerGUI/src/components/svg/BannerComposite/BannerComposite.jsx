@@ -11,20 +11,31 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import BannerCell from "../BannerCell/BannerCell";
 
-function BannerComposite({ horizontalOverlap = 0, verticalOverlap = 56 }) {
-  const rows = 7;
-  const columns = 8;
-  const cellWidth = 104;
-  const cellHeight = 104;
-
+function BannerComposite() {
+  const [config, setConfig] = useState(null);
   const [svgData, setSvgData] = useState([]);
 
   useEffect(() => {
+    const fetchConfig = async () => {
+      try {
+        const response = await axios.get("/public/data/banner.json");
+        setConfig(response.data);
+      } catch (error) {
+        console.error("Error fetching banner config:", error);
+      }
+    };
+
+    fetchConfig();
+  }, []);
+
+  useEffect(() => {
+    if (!config) return;
+
     const fetchCellData = async () => {
       const data = [];
       try {
-        for (let row = 1; row <= rows; row++) {
-          for (let col = 1; col <= columns; col++) {
+        for (let row = 1; row <= config.rows; row++) {
+          for (let col = 1; col <= config.columns; col++) {
             const configResponse = await axios.get(
               `/public/data/banner/cell-${row}-${col}.json`
             );
@@ -42,9 +53,18 @@ function BannerComposite({ horizontalOverlap = 0, verticalOverlap = 56 }) {
     };
 
     fetchCellData();
-  }, []);
+  }, [config]);
 
-  if (!svgData.length) return null;
+  if (!config || !svgData.length) return null;
+
+  const {
+    horizontalOverlap,
+    verticalOverlap,
+    rows,
+    columns,
+    cellWidth,
+    cellHeight,
+  } = config;
 
   const bannerWidth = cellWidth * columns - horizontalOverlap * (columns - 1);
   const bannerHeight = cellHeight * rows - verticalOverlap * (rows - 1);
