@@ -1,6 +1,6 @@
 {
   "cell": {
-    "id": "cell",
+    "id": "cell-7-4",
     "viewBox": {
       "className": "banner",
       "width": 104,
@@ -35,16 +35,60 @@
         "isHidden": false
       },
       "lines": [
-        { "x1": 80.25, "y1": 0, "x2": 80.25, "y2": 104, "isHidden": false },
-        { "x1": 24.25, "y1": 0, "x2": 24.25, "y2": 104, "isHidden": false },
-        { "x1": 0, "y1": 23.75, "x2": 104, "y2": 23.75, "isHidden": false },
-        { "x1": 0, "y1": 79.75, "x2": 104, "y2": 79.75, "isHidden": false }
+        {
+          "x1": 80.25,
+          "y1": 0,
+          "x2": 80.25,
+          "y2": 104,
+          "isHidden": false
+        },
+        {
+          "x1": 24.25,
+          "y1": 0,
+          "x2": 24.25,
+          "y2": 104,
+          "isHidden": false
+        },
+        {
+          "x1": 0,
+          "y1": 23.75,
+          "x2": 104,
+          "y2": 23.75,
+          "isHidden": false
+        },
+        {
+          "x1": 0,
+          "y1": 79.75,
+          "x2": 104,
+          "y2": 79.75,
+          "isHidden": false
+        }
       ],
       "circles": [
-        { "cx": 24, "cy": 24, "r": 2, "isHidden": false },
-        { "cx": 24, "cy": 80, "r": 2, "isHidden": false },
-        { "cx": 80, "cy": 24, "r": 2, "isHidden": false },
-        { "cx": 80, "cy": 80, "r": 2, "isHidden": false }
+        {
+          "cx": 24,
+          "cy": 24,
+          "r": 2,
+          "isHidden": false
+        },
+        {
+          "cx": 24,
+          "cy": 80,
+          "r": 2,
+          "isHidden": false
+        },
+        {
+          "cx": 80,
+          "cy": 24,
+          "r": 2,
+          "isHidden": false
+        },
+        {
+          "cx": 80,
+          "cy": 80,
+          "r": 2,
+          "isHidden": false
+        }
       ]
     }
   }

@@ -23,6 +23,7 @@ async function generateCells() {
   try {
     // Read the source cell.json
     const cellData = await fs.readFile(sourcePath, "utf-8");
+    const cellJson = JSON.parse(cellData);
 
     // Ensure the destination directory exists
     await fs.mkdir(destinationDir, { recursive: true });
@@ -32,7 +33,13 @@ async function generateCells() {
       for (let col = 0; col < columns; col++) {
         const fileName = `cell-${row + 1}-${col + 1}.json`;
         const filePath = path.join(destinationDir, fileName);
-        await fs.writeFile(filePath, cellData);
+
+        // Update the id property
+        if (cellJson.cell && cellJson.cell.id !== undefined) {
+          cellJson.cell.id = fileName.replace(".json", "");
+        }
+
+        await fs.writeFile(filePath, JSON.stringify(cellJson, null, 2));
         console.log(`Generated ${filePath}`);
       }
     }
