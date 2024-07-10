@@ -30,7 +30,7 @@ function BannerCell({ x, y, data }) {
       className={viewBox.className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath={`url(#${id}-0)`}>
+      <g clipPath={`url(#${id})`}>
         {(() => {
           // Destructure isHidden and render path if it's not hidden
           const { isHidden, ...pathProps } = elements.path;
@@ -57,7 +57,7 @@ function BannerCell({ x, y, data }) {
         })}
       </g>
       <defs>
-        <clipPath id={`${id}-0`}>
+        <clipPath id={`${id}`}>
           <rect {...defs.clipPath.type} />
         </clipPath>
       </defs>
