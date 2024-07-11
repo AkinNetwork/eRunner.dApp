@@ -60,14 +60,20 @@ function BannerComposite() {
   const {
     horizontalOverlap,
     verticalOverlap,
-    rows,
-    columns,
     cellWidth,
     cellHeight,
+    bannerWidth,
+    bannerHeight,
+    rows,
+    columns,
   } = config;
 
-  const bannerWidth = cellWidth * columns - horizontalOverlap * (columns - 1);
-  const bannerHeight = cellHeight * rows - verticalOverlap * (rows - 1);
+  const originalWidth = cellWidth * columns - horizontalOverlap * (columns - 1);
+  const originalHeight = cellHeight * rows - verticalOverlap * (rows - 1);
+
+  const scaleX = bannerWidth / originalWidth;
+  const scaleY = bannerHeight / originalHeight;
+  const scale = Math.min(scaleX, scaleY); // Maintain aspect ratio
 
   return (
     <svg
@@ -76,11 +82,17 @@ function BannerComposite() {
       viewBox={`0 0 ${bannerWidth} ${bannerHeight}`}
       xmlns="http://www.w3.org/2000/svg"
     >
-      {svgData.map(({ row, col, config }) => {
-        const x = (col - 1) * (cellWidth - horizontalOverlap);
-        const y = (row - 1) * (cellHeight - verticalOverlap);
-        return <BannerCell key={`${row}-${col}`} x={x} y={y} data={config} />;
-      })}
+      <g
+        transform={`scale(${scale}) translate(${
+          (bannerWidth / scale - originalWidth) / 2
+        }, ${(bannerHeight / scale - originalHeight) / 2})`}
+      >
+        {svgData.map(({ row, col, config }) => {
+          const x = (col - 1) * (cellWidth - horizontalOverlap);
+          const y = (row - 1) * (cellHeight - verticalOverlap);
+          return <BannerCell key={`${row}-${col}`} x={x} y={y} data={config} />;
+        })}
+      </g>
     </svg>
   );
 }
