@@ -1,12 +1,11 @@
 import "./css/ands.css";
-import BannerComposite from "./components/svg/BannerComposite/BannerComposite";
+import Hero from "./components/Hero";
+
 function App() {
   return (
-    <>
-      <div>
-        <BannerComposite />
-      </div>
-    </>
+    <div className="App">
+      <Hero appName="My Application" pageTitle="Page Title" />
+    </div>
   );
 }
 

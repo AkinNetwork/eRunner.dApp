@@ -3,7 +3,7 @@
 @author: Margareta.Sandor@akin.network
 Powered by @AkinTechnologies
 */
-import "./BannerSVG.css";
+import "./css/components/BannerSVG.css";
 
 function BannerSVG() {
   return (

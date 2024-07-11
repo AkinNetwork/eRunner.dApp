@@ -9,7 +9,7 @@ Notes: Dynamic rendering of a banner svg composition
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import BannerCell from "../BannerCell/BannerCell";
+import BannerCell from "./BannerCell";
 
 function BannerComposite() {
   const [config, setConfig] = useState(null);

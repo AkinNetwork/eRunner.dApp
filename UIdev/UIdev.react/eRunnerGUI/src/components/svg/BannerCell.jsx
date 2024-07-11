@@ -8,8 +8,8 @@ Notes: Dynamic rendering of a banner cell svg composition
 
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
-import propTypes from "../../../utils/propTypesHelper";
-import "./BannerCellSVG.css"; // Import the CSS file
+import propTypes from "../../utils/propTypesHelper";
+import "../../css/components/BannerSVG.css"; // Import the CSS file
 
 function BannerCell({ x, y, data }) {
   const { cell } = data;
