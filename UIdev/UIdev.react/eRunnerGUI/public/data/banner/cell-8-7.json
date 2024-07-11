@@ -1,6 +1,6 @@
 {
   "cell": {
-    "id": "cell-1-3",
+    "id": "cell-8-7",
     "viewBox": {
       "className": "banner",
       "width": 104,
@@ -25,11 +25,11 @@
         "y": 12,
         "width": 88,
         "height": 80,
-        "className": "dark",
+        "className": "light",
         "isHidden": true
       },
       "path": {
-        "className": "dark",
+        "className": "light",
         "d": "M8 12C8 9.79086 9.79086 8 12 8H92C94.2091 8 96 9.79086 96 12V92C96 94.2091 94.2091 96 92 96H12C9.79086 96 8 94.2091 8 92V12Z",
         "isHidden": true
       },
@@ -60,7 +60,7 @@
           "y1": 79.75,
           "x2": 104,
           "y2": 79.75,
-          "isHidden": false
+          "isHidden": true
         }
       ],
       "circles": [
@@ -80,7 +80,7 @@
           "cx": 80,
           "cy": 24,
           "r": 2,
-          "isHidden": true
+          "isHidden": false
         },
         {
           "cx": 80,

@@ -15,8 +15,7 @@
           "width": "number",
           "height": "number",
           "fill": "string"
-        },
-        "sets": "boolean"
+        }
       }
     },
     "elements": {

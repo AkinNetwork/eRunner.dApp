@@ -16,8 +16,7 @@
           "width": 104,
           "height": 104,
           "fill": "white"
-        },
-        "sets": false
+        }
       }
     },
     "elements": {
@@ -26,13 +25,13 @@
         "y": 12,
         "width": 88,
         "height": 80,
-        "className": "dark",
-        "isHidden": false
+        "className": "light",
+        "isHidden": true
       },
       "path": {
-        "className": "dark",
+        "className": "light",
         "d": "M8 12C8 9.79086 9.79086 8 12 8H92C94.2091 8 96 9.79086 96 12V92C96 94.2091 94.2091 96 92 96H12C9.79086 96 8 94.2091 8 92V12Z",
-        "isHidden": false
+        "isHidden": true
       },
       "lines": [
         {
@@ -40,7 +39,7 @@
           "y1": 0,
           "x2": 80.25,
           "y2": 104,
-          "isHidden": false
+          "isHidden": true
         },
         {
           "x1": 24.25,
@@ -69,13 +68,13 @@
           "cx": 24,
           "cy": 24,
           "r": 2,
-          "isHidden": false
+          "isHidden": true
         },
         {
           "cx": 24,
           "cy": 80,
           "r": 2,
-          "isHidden": false
+          "isHidden": true
         },
         {
           "cx": 80,
@@ -87,7 +86,7 @@
           "cx": 80,
           "cy": 80,
           "r": 2,
-          "isHidden": false
+          "isHidden": true
         }
       ]
     }

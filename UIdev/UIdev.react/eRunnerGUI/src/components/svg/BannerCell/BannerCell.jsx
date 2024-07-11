@@ -16,7 +16,7 @@ function BannerCell({ x, y, data }) {
   const { id, viewBox, defs, elements } = cell;
 
   const circleClassName = useMemo(() => {
-    return elements.path.className === "dark" ? "light" : "dark";
+    return elements.path.className === "light" ? "dark" : "light";
   }, [elements.path.className]);
 
   return (

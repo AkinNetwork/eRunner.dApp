@@ -16,7 +16,7 @@ const sourcePath = path.resolve(process.cwd(), process.env.SOURCE_PATH);
 const destinationDir = path.resolve(process.cwd(), process.env.DESTINATION_DIR);
 
 // Grid dimensions
-const rows = 7;
+const rows = 8;
 const columns = 8;
 
 async function generateCells() {
