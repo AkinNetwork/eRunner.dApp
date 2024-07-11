@@ -15,7 +15,7 @@ $banner-view-box: "0 0 832 496";
 // 2. fills and strokes
 $banner-fill: "none";
 // cell
-$cell-light: $brand-colour-light;
+$cell-light: $akin-neutral-200;
 $cell-brand: $brand-colour;
 $cell-dark: $brand-colour-dark;
 
@@ -34,7 +34,6 @@ svg.banner {
     stroke: $connector-stroke-colour;
     stroke-width: $connector-strike-width;
   }
-
   circle {
     &.dark {
       fill: $joint-fill-dark;
