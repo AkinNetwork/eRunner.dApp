@@ -1,0 +1,61 @@
+/* 
+@component Hero
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechnologies
+*/
+
+@import "../config";
+@import "../mixin";
+
+// Hero Config (in-scope)
+$hero-width: 100% !default;
+$hero-height: $size-496;
+
+$hero-flex: (
+  flex-direction: row,
+  justify-content: space-between,
+  align-items: center,
+  flex-wrap: wrap,
+);
+
+$flex-page-info-item: (
+  flex: 1,
+  align-self: center,
+);
+
+$flex-banner-container: (
+  flex-direction: column,
+  justify-content: center,
+  align-items: center,
+);
+
+$flex-banner-item: (
+  flex: 1,
+);
+// Styling
+.hero {
+  width: $hero-width;
+  height: $hero-height;
+  overflow: hidden;
+  // flex
+  @include flex-container($hero-flex);
+  .info {
+    width: 15rem;
+    height: auto;
+    display: block;
+    background-color: $background-colour;
+
+    z-index: 1000;
+    @include flex-item($flex-page-info-item);
+  }
+  .banner {
+    position: relative;
+    width: $hero-width;
+    @include flex-item($flex-banner-item);
+    @include flex-container($flex-banner-container);
+    svg {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
