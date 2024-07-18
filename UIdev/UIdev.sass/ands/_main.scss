@@ -18,21 +18,39 @@ body {
   }
 }
 
-.paddings {
-  @include respond-to($container-margin-x) using ($breakpoint, $value) {
-    padding-left: map-get($container-margin-x, $breakpoint);
-    padding-right: map-get($container-margin-x, $breakpoint);
-    padding-top: map-get($container-margin-y, $breakpoint);
-    padding-bottom: map-get($container-margin-y, $breakpoint);
+.cpadding {
+  @include respond-to($container-space-x) using ($breakpoint, $value) {
+    padding-left: map-get($container-space-x, $breakpoint);
+    padding-right: map-get($container-space-x, $breakpoint);
+    padding-top: map-get($container-space-y, $breakpoint);
+    padding-bottom: map-get($container-space-y, $breakpoint);
   }
 }
 
-.margins {
-  @include respond-to($container-margin-x) using ($breakpoint, $value) {
-    margin-left: map-get($container-margin-x, $breakpoint);
-    margin-right: map-get($container-margin-x, $breakpoint);
-    margin-top: map-get($container-margin-y, $breakpoint);
-    margin-bottom: map-get($container-margin-y, $breakpoint);
+.cmargin {
+  @include respond-to($container-space-x) using ($breakpoint, $value) {
+    margin-left: map-get($container-space-x, $breakpoint);
+    margin-right: map-get($container-space-x, $breakpoint);
+    margin-top: map-get($container-space-y, $breakpoint);
+    margin-bottom: map-get($container-space-y, $breakpoint);
+  }
+}
+
+.epadding {
+  @include respond-to($elem-space-x) using ($breakpoint, $value) {
+    padding-left: map-get($elem-space-x, $breakpoint);
+    padding-right: map-get($elem-space-x, $breakpoint);
+    padding-top: map-get($elem-space-y, $breakpoint);
+    padding-bottom: map-get($elem-space-y, $breakpoint);
+  }
+}
+
+.emargin {
+  @include respond-to($elem-space-x) using ($breakpoint, $value) {
+    margin-left: map-get($elem-space-x, $breakpoint);
+    margin-right: map-get($elem-space-x, $breakpoint);
+    margin-top: map-get($elem-space-y, $breakpoint);
+    margin-bottom: map-get($elem-space-y, $breakpoint);
   }
 }
 
@@ -44,7 +62,7 @@ body {
 }
 
 .container {
-  @extend .margins;
+  @extend .cmargin;
 }
 
 .element {
@@ -52,8 +70,14 @@ body {
     background-color: $elem-background-colour;
     border-radius: $elem-border-radius;
     backdrop-filter: blur($elem-backdrop-filter);
+    border: none;
   }
-  &.size {
-    @extend .paddings;
+
+  &.inner {
+    @extend .epadding;
+  }
+
+  &.cont {
+    @extend .cpadding;
   }
 }

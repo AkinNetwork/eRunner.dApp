@@ -74,7 +74,9 @@ $main-max-width: (
   "xxl": 85%,
 );
 
-$container-margin-y: (
+// Spacing
+// Containers
+$container-space-y: (
   "xxs": $size-32,
   "xs": $size-32,
   "sm": $size-32,
@@ -84,7 +86,7 @@ $container-margin-y: (
   "xxl": $size-32,
 ); // Horizontal spacing
 
-$container-margin-x: (
+$container-space-x: (
   "xxs": $size-32,
   "xs": $size-32,
   "sm": $size-32,
@@ -92,6 +94,27 @@ $container-margin-x: (
   "lg": $size-32,
   "xl": $size-32,
   "xxl": $size-32,
+); // Vertical spacing
+
+//Elements
+$elem-space-y: (
+  "xxs": calc($size-16 * 0.5),
+  "xs": calc($size-16 * 0.5),
+  "sm": calc($size-16 * 0.5),
+  "md": calc($size-16 * 0.85),
+  "lg": calc($size-16 * 0.85),
+  "xl": calc($size-16 * 0.85),
+  "xxl": calc($size-16 * 0.85),
+); // Horizontal spacing
+
+$elem-space-x: (
+  "xxs": calc($size-16/2),
+  "xs": calc($size-16/2),
+  "sm": calc($size-16/2),
+  "md": calc($size-16/2),
+  "lg": $size-16,
+  "xl": $size-16,
+  "xxl": $size-16,
 ); // Vertical spacing
 
 $font-family: "Nunito Sans", sans-serif;
@@ -229,4 +252,46 @@ $p-letter-space: (
   "xs": 0.025rem,
   "sm": 0.025rem,
   "md": 0.025rem
+);
+
+// Labels style configuration
+$label-font-size: (
+  // Configurable: P FONT SIZE
+  "xxs": calc($size-16 * 0.9),
+  "xs": calc($size-16 * 0.9),
+  "sm": calc($size-16 * 0.9),
+  "md": $size-16,
+  "lg": $size-16,
+  "xl": $size-16,
+  "xxl": $size-16
+);
+$label-font-weight: (
+  // Configurable: P FONT WEIGHT
+  "xxs": 400,
+  "xs": 400,
+  "sm": 400,
+  "md": 400,
+  "lg": 400,
+  "xl": 400,
+  "xxl": 400
+);
+$label-line-height: (
+  // Configurable: P FONT WEIGHT
+  "xxs": 1,
+  "xs": 1,
+  "sm": 1,
+  "md": 1,
+  "lg": 1,
+  "xl": 1,
+  "xxl": 1
+);
+$label-letter-space: (
+  // Configurable: P FONT WEIGHT
+  "xxs": 0.03rem,
+  "xs": 0.03rem,
+  "sm": 0.03rem,
+  "md": 0.025rem,
+  "lg": 0.025rem,
+  "xl": 0.025rem,
+  "xxl": 0.025rem
 );

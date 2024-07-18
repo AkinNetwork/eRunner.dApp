@@ -1,0 +1,58 @@
+/* 
+@component Hero
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechLab
+*/
+
+@import "../../config";
+@import "../../mixin";
+
+$button-background-colour: $brand-colour !default;
+$button-border: 0.025rem solid $button-background-colour;
+$button-font-colour: $font-colour-invert;
+
+// sizes
+$button-width: 100%;
+$button-height: auto;
+$button-maxim-width: $size-320;
+$button-label-width: calc($button-maxim-width * 0.5);
+
+$gap: calc($size-16 * 1.5);
+
+// button items alignments
+
+$button-flex: (
+  flex-direction: row,
+  justify-content: space-between,
+  align-items: center,
+  flex-wrap: wrap,
+  gap: $gap,
+);
+
+.button {
+  width: $button-width;
+  max-width: $button-maxim-width;
+  height: $button-height;
+  @include flex-container($button-flex);
+
+  &.brand {
+    background-color: $button-background-colour;
+    border: $button-border;
+    border-radius: $elem-border-radius;
+    color: $button-font-colour;
+  }
+
+  span {
+    display: inline-block;
+    &.icon::before {
+      @include respond-to($label-font-size) using ($breakpoint, $value) {
+        font-size: $value * 2.1;
+      }
+      font-weight: bolder;
+    }
+    &.label {
+      min-width: $button-label-width;
+      text-align: left;
+    }
+  }
+}

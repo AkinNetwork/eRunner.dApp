@@ -10,9 +10,11 @@
   src: url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.eot");
   src: url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.eot?#iefix")
       format("embedded-opentype"),
-    url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.woff2")
-      format("woff2"),
-    url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.woff") format("woff"),
+    // url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.woff2")
+    //   format("woff2"),
+    url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.woff") format(
+        "woff"
+      ),
     url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.ttf")
       format("truetype"),
     url("#{$icon-ands-font-path}/#{$icon-ands-font-family}.svg#{$icon-ands-font-family}")

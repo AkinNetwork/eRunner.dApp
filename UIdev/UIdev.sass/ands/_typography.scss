@@ -1,13 +1,22 @@
 @import "config";
 @import "mixin";
 
-// Header H1
-h1 {
+.ands-font {
   font-family: $font-family;
   font-style: normal;
   text-decoration: none;
   text-transform: none;
+}
+
+body {
+  color: $font-colour;
+  @extend .ands-font;
+}
+
+// Header H1
+h1 {
   color: $h1-font-colour;
+  @extend .ands-font;
   @include respond-to($h1-font-size) using ($breakpoint, $value) {
     font-size: $value;
     font-weight: map-get($h1-font-weight, $breakpoint);
@@ -18,11 +27,8 @@ h1 {
 
 // Header H2
 h2 {
-  font-family: $font-family;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
   color: $h2-font-colour;
+  @extend .ands-font;
   @include respond-to($h2-font-size) using ($breakpoint, $value) {
     font-size: $value;
     font-weight: map-get($h2-font-weight, $breakpoint);
@@ -33,15 +39,24 @@ h2 {
 
 // Paragraph P
 p {
-  font-family: $font-family;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
   color: $h2-font-colour;
+  @extend .ands-font;
   @include respond-to($p-font-size) using ($breakpoint, $value) {
     font-size: $value;
     font-weight: map-get($p-font-weight, $breakpoint);
     line-height: map-get($p-line-height, $breakpoint);
     letter-spacing: map-get($p-letter-space, $breakpoint);
+  }
+}
+
+// Labels
+
+.label {
+  @extend .ands-font;
+  @include respond-to($label-font-size) using ($breakpoint, $value) {
+    font-size: $value;
+    font-weight: map-get($label-font-weight, $breakpoint);
+    line-height: map-get($label-line-height, $breakpoint);
+    letter-spacing: map-get($label-letter-space, $breakpoint);
   }
 }
