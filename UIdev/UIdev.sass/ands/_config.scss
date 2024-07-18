@@ -62,6 +62,38 @@ $flex-breakpoints-config: (
   "xxl": $size-64,
 );
 
+// Container
+
+$main-max-width: (
+  "xxs": 100%,
+  "xs": 100%,
+  "sm": 100%,
+  "md": 100%,
+  "lg": 90%,
+  "xl": 85%,
+  "xxl": 85%,
+);
+
+$container-margin-y: (
+  "xxs": $size-32,
+  "xs": $size-32,
+  "sm": $size-32,
+  "md": $size-48,
+  "lg": $size-32,
+  "xl": $size-32,
+  "xxl": $size-32,
+); // Horizontal spacing
+
+$container-margin-x: (
+  "xxs": $size-32,
+  "xs": $size-32,
+  "sm": $size-32,
+  "md": $size-48,
+  "lg": $size-32,
+  "xl": $size-32,
+  "xxl": $size-32,
+); // Vertical spacing
+
 $font-family: "Nunito Sans", sans-serif;
 
 // Icons imports and configuration
@@ -74,14 +106,14 @@ $font-family: "Nunito Sans", sans-serif;
 $icon-ands-font-family: "ands-icons" !default;
 $icon-ands-font-path: "../assets/fonts" !default; //Configurable: FONT path
 
-// Typography configuration
+// TYPOGRAPHY
 
 // H1 style configuration
 $h1-font-size: (
   // Configurable: H1 FONT SIZE
   "xxs": $size-32,
   "xs": $size-32,
-  "sm": $size-40,
+  "sm": $size-32,
   "md": $size-48,
   "lg": $size-48,
   "xl": $size-64,
@@ -120,7 +152,7 @@ $h1-letter-space: (
 
 // H2 style configuration
 $h2-font-size: (
-  // Configurable: H1 FONT SIZE
+  // Configurable: H2 FONT SIZE
   "xxs": $size-24,
   "xs": $size-24,
   "sm": $size-32,
@@ -130,7 +162,7 @@ $h2-font-size: (
   "xxl": $size-56
 );
 $h2-font-weight: (
-  // Configurable: H1 FONT WEIGHT
+  // Configurable: H2 FONT WEIGHT
   "xxs": 300,
   "xs": 300,
   "sm": 300,
@@ -140,7 +172,7 @@ $h2-font-weight: (
   "xxl": 200
 );
 $h2-line-height: (
-  // Configurable: H1 FONT WEIGHT
+  // Configurable: H2 FONT WEIGHT
   "xxs": 1.2,
   "xs": 1.2,
   "sm": 1.2,
@@ -150,7 +182,7 @@ $h2-line-height: (
   "xxl": 1.4
 );
 $h2-letter-space: (
-  // Configurable: H1 FONT WEIGHT
+  // Configurable: H2 FONT WEIGHT
   "xxs": 0.015rem,
   "xs": 0.015rem,
   "sm": 0.015rem,
@@ -158,4 +190,43 @@ $h2-letter-space: (
   "lg": 0.025rem,
   "xl": 0.025rem,
   "xxl": 0.025rem
+);
+
+// Paragraph style configuration
+$p-font-size: (
+  // Configurable: P FONT SIZE
+  "xxs": $size-16,
+  "xs": $size-16,
+  "sm": $size-16,
+  "md": $size-16,
+  "lg": $size-16,
+  "xl": $size-16,
+  "xxl": $size-16
+);
+$p-font-weight: (
+  // Configurable: P FONT WEIGHT
+  "xxs": 300,
+  "xs": 300,
+  "sm": 300,
+  "md": 200,
+  "lg": 200,
+  "xl": 200,
+  "xxl": 200
+);
+$p-line-height: (
+  // Configurable: P FONT WEIGHT
+  "xxs": 1.5,
+  "xs": 1.5,
+  "sm": 1.5,
+  "md": 1.4,
+  "lg": 1.4,
+  "xl": 1.4,
+  "xxl": 1.4
+);
+$p-letter-space: (
+  // Configurable: P FONT WEIGHT
+  "xxs": 0.03rem,
+  "xs": 0.025rem,
+  "sm": 0.025rem,
+  "md": 0.025rem
 );

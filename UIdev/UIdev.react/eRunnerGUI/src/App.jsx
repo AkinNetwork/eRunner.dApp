@@ -1,13 +1,19 @@
 import "./css/ands.css";
 import Hero from "./components/Hero";
 
-const slogan =
-  " Enhance Every Delivery, Your Way! Price match and deliver added value. Customize courier services for any errand request, optimizing efficiency with our intuitive app";
+const heroIntroTitle = "My delivery service, <br>my way!";
+const heroIntroDescription =
+  "Customise delivery offers instantly, optimise itineraries, and streamline delivery timelines with transparency.";
 
 function App() {
   return (
     <div className="App">
-      <Hero appName="eRRand" pageTitle={slogan} />
+      <div className="main">
+        <Hero
+          heroTitle={heroIntroTitle}
+          heroDescription={heroIntroDescription}
+        />
+      </div>
     </div>
   );
 }

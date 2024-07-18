@@ -1,15 +1,34 @@
 /* 
 @component Hero
 @author: Margareta.Sandor@akin.network
-Powered by @AkinTechnologies
+Powered by @AkinTechLab
 */
 
 @import "../config";
 @import "../mixin";
 
-// Hero Config (in-scope)
+// Hero Config variables (in-scope)
 $hero-width: 100% !default;
-$hero-height: $size-496;
+
+$hero-content-block-width: (
+  "xxs": $size-360,
+  "xs": $size-360,
+  "sm": $size-480,
+  "md": $size-480,
+  "lg": $size-480,
+  "xl": $size-480,
+  "xxl": $size-480,
+);
+
+$hero-heigh: (
+  "xxs": $size-640,
+  "xs": $size-640,
+  "sm": $size-640,
+  "md": $size-496,
+  "lg": $size-496,
+  "xl": $size-496,
+  "xxl": $size-496,
+);
 
 $hero-flex: (
   flex-direction: row,
@@ -18,7 +37,7 @@ $hero-flex: (
   flex-wrap: wrap,
 );
 
-$flex-page-info-item: (
+$flex-info-item: (
   flex: 1,
   align-self: center,
 );
@@ -32,23 +51,35 @@ $flex-banner-container: (
 $flex-banner-item: (
   flex: 1,
 );
+
+$logo-scale: (
+  "xxs": 0.8,
+  "xs": 0.8,
+  "sm": 0.8,
+  "md": 0.9,
+);
 // Styling
 .hero {
   width: $hero-width;
-  height: $hero-height;
+  @include respond-to($hero-heigh) using ($breakpoint, $value) {
+    height: $value;
+  }
   overflow: hidden;
   // flex
   @include flex-container($hero-flex);
-  .info {
-    width: 15rem;
-    height: auto;
+  .hero-content-block {
+    @include respond-to($hero-content-block-width) using ($breakpoint, $value) {
+      width: $value;
+      .logo {
+        transform: scale(map-get($logo-scale, $breakpoint));
+        transform-origin: bottom left;
+      }
+    }
     display: block;
-    background-color: $background-colour;
-
     z-index: 1000;
-    @include flex-item($flex-page-info-item);
+    @include flex-item($flex-info-item);
   }
-  .banner {
+  .banner-wrapper {
     position: relative;
     width: $hero-width;
     @include flex-item($flex-banner-item);

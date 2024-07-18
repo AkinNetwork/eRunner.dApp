@@ -1,7 +1,7 @@
 /* 
 @component BannerSVG
 @author: Margareta.Sandor@akin.network
-Powered by @AkinTechnologies
+Powered by @AkinTechLab
 */
 import "./css/components/BannerSVG.css";
 

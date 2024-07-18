@@ -1,0 +1,19 @@
+/* 
+@component Logo
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechLab
+*/
+
+@import "../config";
+@import "../mixin";
+
+svg {
+  &.logo {
+    .base {
+      fill: $font-colour;
+    }
+    .brand {
+      fill: $brand-colour;
+    }
+  }
+}

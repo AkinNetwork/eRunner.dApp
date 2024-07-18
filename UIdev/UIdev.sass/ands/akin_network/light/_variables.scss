@@ -19,13 +19,16 @@ $li-font-colour: $font-colour;
 
 // Backgrounds
 $background-colour: $akin-neutral-0 !default;
-$header-container-background-colour: $akin-0-t56 !default;
 $brand-background-colour: $akin-brand-200 !default;
 $block-light-colour: $akin-neutral-200 !default;
 
 // Containers and block elements defaults
-$container-background-colour: $background-colour;
-$element-background-colour: $background-colour;
+$element-background-colour: $akin-0-t56 !default;
+
+// Blocks and elements
+$elem-background-colour: $akin-0-t88 !default;
+$elem-border-radius: $size-4 !default;
+$elem-backdrop-filter: calc($size-4/2) !default;
 
 // BRANDED ITEMS
 $brand-colour: $akin-brand-500 !default;

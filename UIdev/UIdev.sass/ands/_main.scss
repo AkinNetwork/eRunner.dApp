@@ -17,3 +17,43 @@ body {
     ); // Use $value for flex properties at each breakpoint
   }
 }
+
+.paddings {
+  @include respond-to($container-margin-x) using ($breakpoint, $value) {
+    padding-left: map-get($container-margin-x, $breakpoint);
+    padding-right: map-get($container-margin-x, $breakpoint);
+    padding-top: map-get($container-margin-y, $breakpoint);
+    padding-bottom: map-get($container-margin-y, $breakpoint);
+  }
+}
+
+.margins {
+  @include respond-to($container-margin-x) using ($breakpoint, $value) {
+    margin-left: map-get($container-margin-x, $breakpoint);
+    margin-right: map-get($container-margin-x, $breakpoint);
+    margin-top: map-get($container-margin-y, $breakpoint);
+    margin-bottom: map-get($container-margin-y, $breakpoint);
+  }
+}
+
+.main {
+  @include respond-to($main-max-width) using ($breakpoint, $value) {
+    width: $value;
+  }
+  margin: auto;
+}
+
+.container {
+  @extend .margins;
+}
+
+.element {
+  &.style {
+    background-color: $elem-background-colour;
+    border-radius: $elem-border-radius;
+    backdrop-filter: blur($elem-backdrop-filter);
+  }
+  &.size {
+    @extend .paddings;
+  }
+}
