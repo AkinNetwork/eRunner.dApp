@@ -116,28 +116,28 @@ $h1-font-size: (
   "sm": $size-32,
   "md": $size-48,
   "lg": $size-48,
-  "xl": $size-64,
-  "xxl": $size-64
+  "xl": $size-56,
+  "xxl": $size-56
 );
 $h1-font-weight: (
   // Configurable: H1 FONT WEIGHT
   "xxs": 300,
   "xs": 300,
   "sm": 300,
-  "md": 200,
-  "lg": 200,
-  "xl": 200,
-  "xxl": 200
+  "md": 300,
+  "lg": 300,
+  "xl": 300,
+  "xxl": 300
 );
 $h1-line-height: (
   // Configurable: H1 FONT WEIGHT
   "xxs": 1.2,
   "xs": 1.2,
   "sm": 1.2,
-  "md": 1.2,
-  "lg": 1.2,
-  "xl": 1.4,
-  "xxl": 1.4
+  "md": 1.1,
+  "lg": 1,
+  "xl": 1,
+  "xxl": 1
 );
 $h1-letter-space: (
   // Configurable: H1 FONT WEIGHT

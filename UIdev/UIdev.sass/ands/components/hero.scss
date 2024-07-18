@@ -13,21 +13,21 @@ $hero-width: 100% !default;
 $hero-content-block-width: (
   "xxs": $size-360,
   "xs": $size-360,
-  "sm": $size-480,
-  "md": $size-480,
-  "lg": $size-480,
-  "xl": $size-480,
-  "xxl": $size-480,
+  "sm": $size-320,
+  "md": $size-80,
+  "lg": $size-80,
+  "xl": $size-80,
+  "xxl": $size-80,
 );
 
 $hero-heigh: (
   "xxs": $size-640,
   "xs": $size-640,
   "sm": $size-640,
-  "md": $size-496,
-  "lg": $size-496,
-  "xl": $size-496,
-  "xxl": $size-496,
+  "md": $size-424,
+  "lg": $size-424,
+  "xl": $size-360,
+  "xxl": $size-360,
 );
 
 $hero-flex: (
