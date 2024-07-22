@@ -1,5 +1,6 @@
 import "./css/ands.css";
 import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 const heroIntroTitle = "My delivery service, <br>my way!";
 const heroIntroDescription =
@@ -13,6 +14,7 @@ function App() {
           heroTitle={heroIntroTitle}
           heroDescription={heroIntroDescription}
         />
+        <Footer />
       </div>
     </div>
   );

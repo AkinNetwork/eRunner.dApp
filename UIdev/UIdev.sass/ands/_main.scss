@@ -19,6 +19,7 @@ body {
 }
 
 .cpadding {
+  box-sizing: border-box;
   @include respond-to($container-space-x) using ($breakpoint, $value) {
     padding-left: map-get($container-space-x, $breakpoint);
     padding-right: map-get($container-space-x, $breakpoint);
@@ -28,6 +29,7 @@ body {
 }
 
 .cmargin {
+  box-sizing: border-box;
   @include respond-to($container-space-x) using ($breakpoint, $value) {
     margin-left: map-get($container-space-x, $breakpoint);
     margin-right: map-get($container-space-x, $breakpoint);
@@ -37,6 +39,7 @@ body {
 }
 
 .epadding {
+  box-sizing: border-box;
   @include respond-to($elem-space-x) using ($breakpoint, $value) {
     padding-left: map-get($elem-space-x, $breakpoint);
     padding-right: map-get($elem-space-x, $breakpoint);
@@ -46,6 +49,8 @@ body {
 }
 
 .emargin {
+  box-sizing: border-box;
+
   @include respond-to($elem-space-x) using ($breakpoint, $value) {
     margin-left: map-get($elem-space-x, $breakpoint);
     margin-right: map-get($elem-space-x, $breakpoint);
@@ -59,6 +64,7 @@ body {
     width: $value;
   }
   margin: auto;
+  box-sizing: border-box;
 }
 
 .container {

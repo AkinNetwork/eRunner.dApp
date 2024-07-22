@@ -295,3 +295,45 @@ $label-letter-space: (
   "xl": 0.025rem,
   "xxl": 0.025rem
 );
+
+// Footnote style configuration
+$footnote-font-size: (
+  // Configurable: FOOTNOTE FONT SIZE
+  "xxs": calc($size-16 * 0.7),
+  "xs": calc($size-16 * 0.7),
+  "sm": calc($size-16 * 0.7),
+  "md": calc($size-16 * 0.7),
+  "lg": calc($size-16 * 0.8),
+  "xl": calc($size-16 * 0.8),
+  "xxl": calc($size-16 * 0.8)
+);
+$footnote-font-weight: (
+  // Configurable: FOOTNOTE FONT WEIGHT
+  "xxs": 100,
+  "xs": 100,
+  "sm": 100,
+  "md": 200,
+  "lg": 200,
+  "xl": 200,
+  "xxl": 200
+);
+$footnote-line-height: (
+  // Configurable: FOOTNOTE FONT WEIGHT
+  "xxs": 1.4,
+  "xs": 1.4,
+  "sm": 1.4,
+  "md": 1.4,
+  "lg": 1.4,
+  "xl": 1.4,
+  "xxl": 1.4
+);
+$footnote-letter-space: (
+  // Configurable: FOOTNOTE FONT WEIGHT
+  "xxs": 0.03rem,
+  "xs": 0.03rem,
+  "sm": 0.03rem,
+  "md": 0.03rem,
+  "lg": 0.03rem,
+  "xl": 0.03rem,
+  "xxl": 0.03rem
+);

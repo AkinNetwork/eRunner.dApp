@@ -1,0 +1,48 @@
+/* 
+@component Hero
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechLab
+*/
+
+@import "../config";
+@import "../mixin";
+
+$copyright-flex: (
+  flex-direction: row,
+  justify-content: space-between,
+  align-items: center,
+  flex-wrap: wrap,
+);
+
+$footer-logo-scale: 0.6;
+$footer-logo-height: 56px;
+$footer-logo-width: 160px;
+
+$footer-position: (
+  "xxs": fixed,
+  "xs": fixed,
+  "sm": fixed,
+  "md": relative,
+  "lg": relative,
+  "xl": relative,
+  "xxl": relative,
+);
+
+.footer {
+  width: 100%;
+  @include respond-to($footer-position) using ($breakpoint, $value) {
+    position: $value;
+    bottom: 0;
+  }
+  .copyright {
+    overflow: hidden;
+    // flex
+    @include flex-container($copyright-flex);
+    .logo {
+      transform: scale($footer-logo-scale);
+      width: $footer-logo-width;
+      height: $footer-logo-height;
+      transform-origin: center right;
+    }
+  }
+}

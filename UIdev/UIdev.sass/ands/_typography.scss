@@ -60,3 +60,15 @@ p {
     letter-spacing: map-get($label-letter-space, $breakpoint);
   }
 }
+
+// Footnote
+
+.footnote {
+  @extend .ands-font;
+  @include respond-to($footnote-font-size) using ($breakpoint, $value) {
+    font-size: $value;
+    font-weight: map-get($footnote-font-weight, $breakpoint);
+    line-height: map-get($footnote-line-height, $breakpoint);
+    letter-spacing: map-get($footnote-letter-space, $breakpoint);
+  }
+}
