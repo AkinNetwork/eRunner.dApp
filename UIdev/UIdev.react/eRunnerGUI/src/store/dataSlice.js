@@ -1,3 +1,9 @@
+/* 
+@component Application - Data Redux Slice
+@author: Margareta.Sandor@akin.network
+Powered by @AkinTechLab
+*/
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchInitialData = createAsyncThunk(
