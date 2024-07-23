@@ -4,17 +4,23 @@
 Powered by @AkinTechLab
 */
 
+import PropTypes from "prop-types";
 import AkinNetworkLogo from "./../svg/AkinNetworkLogo";
 
-const copyright = "©Powered by Akin Network <br/> 2022-2025";
-
-function Copyright() {
+function Copyright({ copyright }) {
+  const { copyright: text } = copyright;
   return (
     <div className="copyright">
-      <p className="footnote" dangerouslySetInnerHTML={{ __html: copyright }} />
+      <p className="footnote" dangerouslySetInnerHTML={{ __html: text }} />
       <AkinNetworkLogo />
     </div>
   );
 }
+
+Copyright.propTypes = {
+  copyright: PropTypes.shape({
+    copyright: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Copyright;

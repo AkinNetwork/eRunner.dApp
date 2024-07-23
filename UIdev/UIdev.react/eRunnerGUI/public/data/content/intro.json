@@ -1,0 +1,18 @@
+{
+  "Hero": {
+    "heroInfo": {
+      "heroTitle": "My delivery service, <br>my way!",
+      "heroDescription": "Customise delivery offers instantly, optimise itineraries, and streamline delivery timelines with transparency.",
+      "button": {
+        "leftIconClass": "icon-ands-vault",
+        "label": "My Vault",
+        "rightIconClass": "icon-ands-right"
+      }
+    }
+  },
+  "Footer": {
+    "Copyright": {
+      "copyright": "©Powered by Akin Network <br/> 2022-2025"
+    }
+  }
+}
